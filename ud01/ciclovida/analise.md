@@ -12,24 +12,25 @@ Non Funcionais
 ### Deseño
 
 ```
-kotlin-cli-calculator/
-├─ build.sh
-├─ run.sh
-├─ .vscode/
-│  ├─ tasks.json
-│  └─ launch.json
-└─ src/
-   └─ main/
-      └─ kotlin/
-         └─ com/example/
-            ├─ calculator/Calculator.kt
-            ├─ ui/ConsoleUI.kt
-            └─ Main.kt
+├── pom.xml
+├── src
+│   ├── main
+│   │   └── kotlin
+│   │       └── com
+│   │           └── exemplo
+│   │               └── kotlindemo
+│   │                   ├── Calculadora.kt
+│   │                   ├── Main.kt
+│   │                   └── VistaCalculadora.kt
+│   └── test
+│       └── kotlin
+│           └── com
+│               └── exemplo
+│                   └── kotlindemo
+│                       ├── CalculadoraTest.kt
+│                       ├── MainTest.kt
+│                       └── VistaCalculadoraTest.kt
 ```
-
-Dar permisos de execución para os scripts
-
-> chmod +x build.sh run.sh
 
 ### Implementación
 
