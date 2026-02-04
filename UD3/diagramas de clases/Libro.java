@@ -1,19 +1,15 @@
-package diagrama;
-
-import java.util.ArrayList;
+package com.example;
 
 public class Libro {
     public String nome;
     public String tipo;
     public String editorial;
     public int ano;
-    public ArrayList<autor>Autor;
 
     public Libro(String nome, String tipo, String editorial, int ano) {
         this.nome = nome;
         this.tipo = tipo;
         this.editorial = editorial;
         this.ano = ano;
-        this.Autor = new ArrayList<>();
     }
 }
