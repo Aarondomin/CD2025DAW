@@ -7,21 +7,30 @@
 
 ```mermaid
 flowchart LR
-    actorUsuario([Usuario])
-    actorAdmin([Administrador])
+    actorUsuario([Cliente])
+    actorAgente([Agente de viajes])
 
-    casoLogin((Iniciar sesión))
-    casoConsultar((Consultar información))
-    casoCrear((Crear rexistro))
-    casoEditar((Editar rexistro))
-    casoEliminar((Eliminar rexistro))
 
-    actorUsuario --> casoLogin
-    actorUsuario --> casoConsultar
+    casoBusca((Busca vuelo))
+    casoReserva((Realiza Reserva))
+    casoPaga((Paga reserva))
+    casoGestiona((Modifica/Candela))
+    casoServicio((Vuelo, Hotel, Coche))
+    casoFecha((Fecha Inicio y Fecha fin))
+    casoDestino((Destino))
 
-    actorAdmin --> casoLogin
-    actorAdmin --> casoConsultar
-    actorAdmin --> casoCrear
-    actorAdmin --> casoEditar
-    actorAdmin --> casoEliminar
+
+    actorUsuario --> casoBusca
+    actorUsuario --> casoReserva
+    actorAgente --> casoBusca
+    actorAgente --> casoReserva
+    actorAgente --> casoGestiona
+    
+
+    casoReserva--<include>-->casoPaga
+    casoBusca--<include>-->casoServicio
+    casoBusca--<include>-->casoFecha
+    casoBusca--<include>-->casoDestino
+
+
 ``` 
