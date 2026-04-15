@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>XestorNotas.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">XestorNotas.java</span></div><h1>XestorNotas.java</h1><pre class="source lang-java linenums">package com.example;
+
+public class XestorNotas {
+
+    private String alumno;
+    private double[] notas;
+
+<span class="nc" id="L8">    public XestorNotas() {</span>
+<span class="nc" id="L9">        this.alumno = &quot;Anonimo&quot;;</span>
+<span class="nc" id="L10">        this.notas = new double[0];</span>
+<span class="nc" id="L11">    }</span>
+
+<span class="nc" id="L13">    public XestorNotas(String alumno, double[] notas) {</span>
+<span class="nc" id="L14">        this.alumno = alumno;</span>
+<span class="nc" id="L15">        this.notas = notas;</span>
+<span class="nc" id="L16">    }</span>
+
+    public String getAlumno() {
+<span class="nc" id="L19">        return alumno;</span>
+    }
+
+    public void setAlumno(String alumno) {
+<span class="nc" id="L23">        this.alumno = alumno;</span>
+<span class="nc" id="L24">    }</span>
+
+    public double[] getNotas() {
+<span class="nc" id="L27">        return notas;</span>
+    }
+
+    public void setNotas(double[] notas) {
+<span class="nc" id="L31">        this.notas = notas;</span>
+<span class="nc" id="L32">    }</span>
+
+    public double calcularMedia() {
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (notas.length == 0) {</span>
+<span class="nc" id="L36">            return 0;</span>
+        }
+
+<span class="nc" id="L39">        double suma = 0;</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        for (double nota : notas) {</span>
+<span class="nc" id="L41">            suma += nota;</span>
+        }
+
+<span class="nc" id="L44">        return suma / notas.length;</span>
+    }
+
+    public double calcularMaximo() {
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (notas.length == 0) {</span>
+<span class="nc" id="L49">            return 0;</span>
+        }
+
+<span class="nc" id="L52">        double max = notas[0];</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        for (double nota : notas) {</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (nota &gt; max) {</span>
+<span class="nc" id="L55">                max = nota;</span>
+            }
+        }
+
+<span class="nc" id="L59">        return max;</span>
+    }
+
+    public boolean estaAprobado() {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        return calcularMedia() &gt;= 5;</span>
+    }
+
+    public int contarSuspensos() {
+<span class="nc" id="L67">        int contador = 0;</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        for (double nota : notas) {</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">            if (nota &lt; 5) {</span>
+<span class="nc" id="L70">                contador++;</span>
+            }
+        }
+<span class="nc" id="L73">        return contador;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
