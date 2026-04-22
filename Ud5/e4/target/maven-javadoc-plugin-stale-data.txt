@@ -1,0 +1,47 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+--release
+21
+-sourcepath
+'/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'e1 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'e1 1.0-SNAPSHOT API'
+com.example
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/src/main/java = 1776849407559
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/allpackages-index.html = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/copy.svg = 1776850746975
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/tag-search-index.js = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/index-all.html = 1776850746970
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/allclasses-index.html = 1776850746959
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/link.svg = 1776850746975
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/type-search-index.js = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/search.js = 1776850746976
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/overview-tree.html = 1776850746951
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/package-search-index.js = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/search.html = 1776850746971
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/member-search-index.js = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/stylesheet.css = 1776850746975
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/script.js = 1776850746975
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/search-page.js = 1776850746977
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/element-list = 1776850746924
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/index.html = 1776850746971
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/module-search-index.js = 1776850746960
+/home/vagrant/Desktop/CD2025DAW/CD2025DAW/Ud5/e4/target/reports/apidocs/help-doc.html = 1776850746974

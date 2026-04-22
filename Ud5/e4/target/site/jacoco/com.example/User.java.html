@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Clase User
+ */
+public class User {
+
+    /** Identificador único del usuario (por ejemplo, DNI o ID de socio). */
+    private String id;
+
+    /** Nombre completo del usuario. */
+    private String name;
+
+    /** Lista de préstamos asociados al usuario. */
+    private List&lt;Loan&gt; loans;
+
+    /**
+     * Construye un nuevo usuario con un ID y nombre específicos.
+     * Inicializa la lista de préstamos como una lista vacía.
+     *
+     * @param id El identificador único del usuario.
+     * @param name El nombre del usuario.
+     */
+<span class="fc" id="L27">    public User(String id, String name) {</span>
+<span class="fc" id="L28">        this.id = id;</span>
+<span class="fc" id="L29">        this.name = name;</span>
+<span class="fc" id="L30">        this.loans = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L31">    }</span>
+
+    /**
+     * Obtiene el nombre del usuario.
+     * @return El nombre actual del usuario.
+     */
+    public String getName() {
+<span class="nc" id="L38">        return name;</span>
+    }
+    
+    /**
+     * Obtiene el identificador del usuario.
+     * @return El ID del usuario.
+     */
+    public String getId() {
+<span class="fc" id="L46">        return id;</span>
+    }
+
+    /**
+     * Obtiene la lista de todos los préstamos vinculados al usuario.
+     * @return Una List que contiene los objetos Loan.
+     */
+    public List&lt;Loan&gt; getLoans() {
+<span class="fc" id="L54">        return loans;</span>
+    }
+
+    /**
+     * Añade un nuevo préstamo a la cuenta del usuario.
+     * * @param loan El préstamo que se desea añadir.
+     * @throws IllegalStateException Si el usuario ya tiene 3 préstamos (límite máximo permitido).
+     */
+    public void addLoan(Loan loan) {
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">        if (loans.size() &gt;= 3) {</span>
+<span class="nc" id="L64">            throw new IllegalStateException(&quot;Max loans reached&quot;);</span>
+        }
+<span class="fc" id="L66">        loans.add(loan);</span>
+<span class="fc" id="L67">    }</span>
+
+    /**
+     * Elimina un préstamo específico de la lista del usuario.
+     * Suele utilizarse cuando un préstamo se cancela o se procesa su devolución.
+     *
+     * @param loan El préstamo a eliminar.
+     */
+    public void removeLoan(Loan loan) {
+<span class="nc" id="L76">        loans.remove(loan);</span>
+<span class="nc" id="L77">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

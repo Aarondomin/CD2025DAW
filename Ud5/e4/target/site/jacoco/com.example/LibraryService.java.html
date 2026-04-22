@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibraryService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">LibraryService.java</span></div><h1>LibraryService.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Clase LibraryService
+ */
+<span class="fc" id="L9">public class LibraryService {</span>
+
+    /** Mapa de libros indexados por su ISBN. */
+<span class="fc" id="L12">    private Map&lt;String, Book&gt; books = new HashMap&lt;&gt;();</span>
+    
+    /** Mapa de usuarios indexados por su ID único. */
+<span class="fc" id="L15">    private Map&lt;String, User&gt; users = new HashMap&lt;&gt;();</span>
+
+    /**
+     * Registra un nuevo libro en el sistema de la biblioteca.
+     *
+     * @param book El objeto Book que se desea añadir.
+     * @throws IllegalArgumentException si el libro ya existe en el sistema (basado en el ISBN).
+     */
+    public void addBook(Book book) {
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (books.containsKey(book.getIsbn())) {</span>
+<span class="nc" id="L25">            throw new IllegalArgumentException(&quot;Book already exists&quot;);</span>
+        }
+<span class="fc" id="L27">        books.put(book.getIsbn(), book);</span>
+<span class="fc" id="L28">    }</span>
+
+    /**
+     * Registra un nuevo usuario en el sistema.
+     *
+     * @param user El objeto User que se desea dar de alta.
+     * @throws IllegalArgumentException si el ID del usuario ya se encuentra registrado.
+     */
+    public void addUser(User user) {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (users.containsKey(user.getId())) {</span>
+<span class="nc" id="L38">            throw new IllegalArgumentException(&quot;User already exists&quot;);</span>
+        }
+<span class="fc" id="L40">        users.put(user.getId(), user);</span>
+<span class="fc" id="L41">    }</span>
+
+    /**
+     * Realiza el préstamo de un libro a un usuario específico.
+     *
+     * @param isbn   El código ISBN del libro que se solicita.
+     * @param userId El identificador único del usuario que solicita el préstamo.
+     * @return Un objeto Loan que representa la transacción del préstamo.
+     * @throws IllegalArgumentException si el libro o el usuario no existen en los registros.
+     */
+    public Loan borrowBook(String isbn, String userId) {
+<span class="fc" id="L52">        Book book = books.get(isbn);</span>
+<span class="fc" id="L53">        User user = users.get(userId);</span>
+
+<span class="pc bpc" id="L55" title="2 of 4 branches missed.">        if (book == null || user == null) {</span>
+<span class="nc" id="L56">            throw new IllegalArgumentException(&quot;Invalid data&quot;);</span>
+        }
+
+<span class="fc" id="L59">        book.borrow();</span>
+
+<span class="fc" id="L61">        Loan loan = new Loan(book, user);</span>
+<span class="fc" id="L62">        user.addLoan(loan);</span>
+
+<span class="fc" id="L64">        return loan;</span>
+    }
+
+    /**
+     * Procesa la devolución de un libro y cierra el préstamo activo.
+     *
+     * @param loan El objeto  Loan que se desea finalizar.
+     * @throws IllegalStateException si el préstamo ya se encuentra cerrado o inactivo.
+     */
+    public void returnBook(Loan loan) {
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!loan.isActive()) {</span>
+<span class="nc" id="L75">            throw new IllegalStateException(&quot;Loan already closed&quot;);</span>
+        }
+
+<span class="nc" id="L78">        loan.closeLoan();</span>
+<span class="nc" id="L79">        loan.getBook().giveBack();</span>
+<span class="nc" id="L80">        loan.getUser().removeLoan(loan);</span>
+<span class="nc" id="L81">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

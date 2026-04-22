@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package com.example;
+
+/**
+ * Calse book
+ */
+public class Book {
+
+    /** O ISBN do libro. */
+    private String isbn;
+    
+    /** O título do libro. */
+    private String title;
+    
+    /** Indica se o libro está dispoñible */
+    private boolean available;
+
+    /**
+     * Constrúe un novo obxecto Book.
+     * Por defecto créanse como dispoñibles.
+     *
+     * @param isbn O código ISBN do libro.
+     * @param title O título do libro.
+     */
+<span class="fc" id="L24">    public Book(String isbn, String title) {</span>
+<span class="fc" id="L25">        this.isbn = isbn;</span>
+<span class="fc" id="L26">        this.title = title;</span>
+<span class="fc" id="L27">        this.available = true;</span>
+<span class="fc" id="L28">    }</span>
+
+    /**
+     * Obtén o ISBN do libro.
+     * @return Un String co ISBN.
+     */
+    public String getIsbn() {
+<span class="fc" id="L35">        return isbn;</span>
+    }
+
+    /**
+     * Obtén o título do libro.
+     * @return O título do libro.
+     */
+    public String getTitle() {
+<span class="fc" id="L43">        return title;</span>
+    }
+
+    /**
+     * Indica se o libro está actualmente dispoñible na biblioteca.
+     * @return true se está dispoñible,  false se non esta dispoñible.
+     */
+    public boolean isAvailable() {
+<span class="fc" id="L51">        return available;</span>
+    }
+
+    /**
+     * Realiza o préstamo do libro. 
+     * Cambia o estado de dispoñible a falso.
+     *
+     * @throws IllegalStateException Se o libro xa está prestado (non dispoñible).
+     */
+    public void borrow() {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (!available) {</span>
+<span class="fc" id="L62">            throw new IllegalStateException(&quot;Book not available&quot;);</span>
+        }
+<span class="fc" id="L64">        available = false;</span>
+<span class="fc" id="L65">    }</span>
+
+    /**
+     * Devolve o libro á biblioteca.
+     * Cambia o estado de dispoñible a verdadeiro.
+     */
+    public void giveBack() {
+<span class="fc" id="L72">        available = true;</span>
+<span class="fc" id="L73">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

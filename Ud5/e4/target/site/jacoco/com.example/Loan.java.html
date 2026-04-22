@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Loan.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Loan.java</span></div><h1>Loan.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.time.LocalDate;
+
+/**
+ * Clase Loan
+ */
+public class Loan {
+
+    /** El libro que ha sido prestado. */
+    private Book book;
+
+    /** El usuario que realiza el préstamo. */
+    private User user;
+
+    /** La fecha en la que se inició el préstamo. */
+    private LocalDate startDate;
+
+    /** La fecha en la que se devolvió el libro (null si aún está activo). */
+    private LocalDate endDate;
+
+    /**
+     * Crea una nueva instancia de un préstamo.
+     * La fecha de inicio se establece automáticamente a la fecha actual.
+     *
+     * @param book El objeto Book que se va a prestar.
+     * @param user El objeto User que solicita el libro.
+     */
+<span class="fc" id="L29">    public Loan(Book book, User user) {</span>
+<span class="fc" id="L30">        this.book = book;</span>
+<span class="fc" id="L31">        this.user = user;</span>
+<span class="fc" id="L32">        this.startDate = LocalDate.now();</span>
+<span class="fc" id="L33">    }</span>
+
+    /**
+     * Obtiene el libro asociado a este préstamo.
+     * @return El libro prestado.
+     */
+    public Book getBook() {
+<span class="fc" id="L40">        return book;</span>
+    }
+
+    /**
+     * Obtiene el usuario que tiene el libro.
+     * @return El usuario del préstamo.
+     */
+    public User getUser() {
+<span class="fc" id="L48">        return user;</span>
+    }
+
+    /**
+     * Obtiene la fecha en la que se realizó el préstamo.
+     * @return Objeto LocalDate con la fecha de inicio.
+     */
+    public LocalDate getStartDate() {
+<span class="nc" id="L56">        return startDate;</span>
+    }
+
+    /**
+     * Registra la devolución del libro estableciendo la fecha de finalización
+     * a la fecha actual del sistema.
+     */
+    public void closeLoan() {
+<span class="nc" id="L64">        this.endDate = LocalDate.now();</span>
+<span class="nc" id="L65">    }</span>
+
+    /**
+     * Verifica si el préstamo sigue vigente.
+     * Un préstamo se considera activo si no tiene una fecha de finalización registrada.
+     *
+     * @return  true si el libro aún no ha sido devuelto false en caso contrario.
+     */
+    public boolean isActive() {
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        return endDate == null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
