@@ -1,76 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>XestorNotas.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">e1</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">XestorNotas.java</span></div><h1>XestorNotas.java</h1><pre class="source lang-java linenums">package com.example;
 
+/**
+ * Clase Xestor Notas
+ */
 public class XestorNotas {
 
+    /** Nombre del alumno */
     private String alumno;
+    
+    /** Array que almacena las notas numéricas del alumno */
     private double[] notas;
 
-<span class="nc" id="L8">    public XestorNotas() {</span>
-<span class="nc" id="L9">        this.alumno = &quot;Anonimo&quot;;</span>
-<span class="nc" id="L10">        this.notas = new double[0];</span>
-<span class="nc" id="L11">    }</span>
+    /**
+     * Constructor por defecto.
+     * Inicializa el alumno como &quot;Anonimo&quot; y el array de notas vacío.
+     */
+<span class="nc" id="L18">    public XestorNotas() {</span>
+<span class="nc" id="L19">        this.alumno = &quot;Anonimo&quot;;</span>
+<span class="nc" id="L20">        this.notas = new double[0];</span>
+<span class="nc" id="L21">    }</span>
 
-<span class="nc" id="L13">    public XestorNotas(String alumno, double[] notas) {</span>
-<span class="nc" id="L14">        this.alumno = alumno;</span>
-<span class="nc" id="L15">        this.notas = notas;</span>
-<span class="nc" id="L16">    }</span>
+    /**
+     * Constructor con parámetros.
+     * * @param alumno Nombre del estudiante.
+     * @param notas Array de tipo double con las calificaciones iniciales.
+     */
+<span class="fc" id="L28">    public XestorNotas(String alumno, double[] notas) {</span>
+<span class="fc" id="L29">        this.alumno = alumno;</span>
+<span class="fc" id="L30">        this.notas = notas;</span>
+<span class="fc" id="L31">    }</span>
 
+    /**
+     * Obtiene el nombre del alumno.
+     * @return El nombre actual del alumno.
+     */
     public String getAlumno() {
-<span class="nc" id="L19">        return alumno;</span>
+<span class="fc" id="L38">        return alumno;</span>
     }
 
+    /**
+     * Establece el nombre del alumno.
+     * @param alumno Nuevo nombre para el estudiante.
+     */
     public void setAlumno(String alumno) {
-<span class="nc" id="L23">        this.alumno = alumno;</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L46">        this.alumno = alumno;</span>
+<span class="fc" id="L47">    }</span>
 
+    /**
+     * Obtiene el array de notas.
+     * @return Array de doubles con las calificaciones.
+     */
     public double[] getNotas() {
-<span class="nc" id="L27">        return notas;</span>
+<span class="fc" id="L54">        return notas;</span>
     }
 
+    /**
+     * Asigna un nuevo conjunto de notas.
+     * @param notas Array de doubles que sustituirá al actual.
+     */
     public void setNotas(double[] notas) {
-<span class="nc" id="L31">        this.notas = notas;</span>
-<span class="nc" id="L32">    }</span>
+<span class="fc" id="L62">        this.notas = notas;</span>
+<span class="fc" id="L63">    }</span>
 
+    /**
+     * Calcula la media aritmética de las notas almacenadas.
+     * * @return La media de las notas. Si no hay notas, devuelve 0.
+     */
     public double calcularMedia() {
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (notas.length == 0) {</span>
-<span class="nc" id="L36">            return 0;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (notas.length == 0) {</span>
+<span class="fc" id="L71">            return 0;</span>
         }
 
-<span class="nc" id="L39">        double suma = 0;</span>
-<span class="nc bnc" id="L40" title="All 2 branches missed.">        for (double nota : notas) {</span>
-<span class="nc" id="L41">            suma += nota;</span>
+<span class="fc" id="L74">        double suma = 0;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        for (double nota : notas) {</span>
+<span class="fc" id="L76">            suma += nota;</span>
         }
 
-<span class="nc" id="L44">        return suma / notas.length;</span>
+<span class="fc" id="L79">        return suma / notas.length;</span>
     }
 
+    /**
+     * Busca la nota más alta dentro del array de calificaciones.
+     * * @return La nota máxima encontrada. Si el array está vacío, devuelve 0.
+     */
     public double calcularMaximo() {
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (notas.length == 0) {</span>
-<span class="nc" id="L49">            return 0;</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (notas.length == 0) {</span>
+<span class="fc" id="L88">            return 0;</span>
         }
 
-<span class="nc" id="L52">        double max = notas[0];</span>
-<span class="nc bnc" id="L53" title="All 2 branches missed.">        for (double nota : notas) {</span>
-<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (nota &gt; max) {</span>
-<span class="nc" id="L55">                max = nota;</span>
+<span class="fc" id="L91">        double max = notas[0];</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        for (double nota : notas) {</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">            if (nota &gt; max) {</span>
+<span class="fc" id="L94">                max = nota;</span>
             }
         }
 
-<span class="nc" id="L59">        return max;</span>
+<span class="fc" id="L98">        return max;</span>
     }
 
+    /**
+     * Determina si el alumno está aprobado basándose en la media.
+     * Se considera aprobado si la media es igual o superior a 5.
+     * * @return {@code true} si la media es &gt;= 5, {@code false} en caso contrario.
+     */
     public boolean estaAprobado() {
-<span class="nc bnc" id="L63" title="All 2 branches missed.">        return calcularMedia() &gt;= 5;</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        return calcularMedia() &gt;= 5;</span>
     }
 
+    /**
+     * Cuenta cuántas notas son inferiores a 5 (suspensos).
+     * * @return El número total de calificaciones suspensas.
+     */
     public int contarSuspensos() {
-<span class="nc" id="L67">        int contador = 0;</span>
-<span class="nc bnc" id="L68" title="All 2 branches missed.">        for (double nota : notas) {</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">            if (nota &lt; 5) {</span>
-<span class="nc" id="L70">                contador++;</span>
+<span class="fc" id="L115">        int contador = 0;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        for (double nota : notas) {</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">            if (nota &lt; 5) {</span>
+<span class="fc" id="L118">                contador++;</span>
             }
         }
-<span class="nc" id="L73">        return contador;</span>
+<span class="fc" id="L121">        return contador;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
