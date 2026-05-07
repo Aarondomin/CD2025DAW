@@ -21,8 +21,8 @@ import java.util.Map;
      * @throws IllegalArgumentException si el libro ya existe en el sistema (basado en el ISBN).
      */
     public void addBook(Book book) {
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (books.containsKey(book.getIsbn())) {</span>
-<span class="nc" id="L25">            throw new IllegalArgumentException(&quot;Book already exists&quot;);</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (books.containsKey(book.getIsbn())) {</span>
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;Book already exists&quot;);</span>
         }
 <span class="fc" id="L27">        books.put(book.getIsbn(), book);</span>
 <span class="fc" id="L28">    }</span>
@@ -34,8 +34,8 @@ import java.util.Map;
      * @throws IllegalArgumentException si el ID del usuario ya se encuentra registrado.
      */
     public void addUser(User user) {
-<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (users.containsKey(user.getId())) {</span>
-<span class="nc" id="L38">            throw new IllegalArgumentException(&quot;User already exists&quot;);</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (users.containsKey(user.getId())) {</span>
+<span class="fc" id="L38">            throw new IllegalArgumentException(&quot;User already exists&quot;);</span>
         }
 <span class="fc" id="L40">        users.put(user.getId(), user);</span>
 <span class="fc" id="L41">    }</span>
@@ -52,8 +52,8 @@ import java.util.Map;
 <span class="fc" id="L52">        Book book = books.get(isbn);</span>
 <span class="fc" id="L53">        User user = users.get(userId);</span>
 
-<span class="pc bpc" id="L55" title="2 of 4 branches missed.">        if (book == null || user == null) {</span>
-<span class="nc" id="L56">            throw new IllegalArgumentException(&quot;Invalid data&quot;);</span>
+<span class="fc bfc" id="L55" title="All 4 branches covered.">        if (book == null || user == null) {</span>
+<span class="fc" id="L56">            throw new IllegalArgumentException(&quot;Invalid data&quot;);</span>
         }
 
 <span class="fc" id="L59">        book.borrow();</span>
@@ -71,13 +71,13 @@ import java.util.Map;
      * @throws IllegalStateException si el préstamo ya se encuentra cerrado o inactivo.
      */
     public void returnBook(Loan loan) {
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!loan.isActive()) {</span>
-<span class="nc" id="L75">            throw new IllegalStateException(&quot;Loan already closed&quot;);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (!loan.isActive()) {</span>
+<span class="fc" id="L75">            throw new IllegalStateException(&quot;Loan already closed&quot;);</span>
         }
 
-<span class="nc" id="L78">        loan.closeLoan();</span>
-<span class="nc" id="L79">        loan.getBook().giveBack();</span>
-<span class="nc" id="L80">        loan.getUser().removeLoan(loan);</span>
-<span class="nc" id="L81">    }</span>
+<span class="fc" id="L78">        loan.closeLoan();</span>
+<span class="fc" id="L79">        loan.getBook().giveBack();</span>
+<span class="fc" id="L80">        loan.getUser().removeLoan(loan);</span>
+<span class="fc" id="L81">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
